@@ -1,4 +1,3 @@
-[submodule "win10-initial-setup-script"]
+[submodule "vendor/win10-initial-setup-script"]
 	path = vendor/win10-initial-setup-script
-	shallow = true
-	url = git://github.com/Disassembler0/Win10-Initial-Setup-Script.git
+	url = https://github.com/Disassembler0/Win10-Initial-Setup-Script

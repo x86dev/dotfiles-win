@@ -33,6 +33,9 @@ set MY_CHOCO_INSTALL_CMD=choco install -v --yes
 %MY_CHOCO_INSTALL_CMD% windbg
 %MY_CHOCO_INSTALL_CMD% microsoft-windows-terminal
 
+REM Required for Windows terminal.
+%MY_CHOCO_INSTALL_CMD% dotnetfx
+
 REM Multimedia stuff.
 %MY_CHOCO_INSTALL_CMD% spotify
 %MY_CHOCO_INSTALL_CMD% vlc

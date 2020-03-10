@@ -6,31 +6,26 @@ set MY_CHOCO_INSTALL_CMD=choco install -v --yes
 
 %MY_CHOCO_INSTALL_CMD% choco-upgrade-all-at
 
-%MY_CHOCO_INSTALL_CMD% conemu
-%MY_CHOCO_INSTALL_CMD% curl
+%MY_CHOCO_INSTALL_CMD% busybox
+busybox --install %SystemRoot%
+
 %MY_CHOCO_INSTALL_CMD% firefox
 %MY_CHOCO_INSTALL_CMD% git
 %MY_CHOCO_INSTALL_CMD% gpg4win
-%MY_CHOCO_INSTALL_CMD% greenshot
 %MY_CHOCO_INSTALL_CMD% keepass
 %MY_CHOCO_INSTALL_CMD% putty
 %MY_CHOCO_INSTALL_CMD% qownnotes
-%MY_CHOCO_INSTALL_CMD% livekd
 %MY_CHOCO_INSTALL_CMD% nextcloud-client
 %MY_CHOCO_INSTALL_CMD% python3
 %MY_CHOCO_INSTALL_CMD% sumatrapdf
 %MY_CHOCO_INSTALL_CMD% sysinternals
-%MY_CHOCO_INSTALL_CMD% tccle
 %MY_CHOCO_INSTALL_CMD% thunderbird
 %MY_CHOCO_INSTALL_CMD% totalcommander
-%MY_CHOCO_INSTALL_CMD% tortoisesvn
 %MY_CHOCO_INSTALL_CMD% tortoisegit
 %MY_CHOCO_INSTALL_CMD% vim
-%MY_CHOCO_INSTALL_CMD% visualstudio2017community
 %MY_CHOCO_INSTALL_CMD% vscode
 %MY_CHOCO_INSTALL_CMD% vscode-settingssync
 %MY_CHOCO_INSTALL_CMD% wget
-%MY_CHOCO_INSTALL_CMD% windbg
 %MY_CHOCO_INSTALL_CMD% microsoft-windows-terminal
 
 REM Required for Windows terminal.

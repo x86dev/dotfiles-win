@@ -36,8 +36,5 @@ REM Multimedia stuff.
 %MY_CHOCO_INSTALL_CMD% vlc
 %MY_CHOCO_INSTALL_CMD% xnviewmp
 
-bcdedit.exe -set loadoptions DDISABLE_INTEGRITY_CHECKS
-bcdedit.exe -set TESTSIGNING ON
-
 REM Disable fast startup (will break dual boot).
 powercfg -h off

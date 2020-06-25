@@ -2,13 +2,15 @@
 
 choco feature enable -n allowGlobalConfirmation
 
-set MY_CHOCO_INSTALL_CMD=choco install -v --yes
+set MY_CHOCO_INSTALL_CMD=choco install --limitoutput --yes
+set MY_CHOCO_PIN_CMD=choco pin add -n=
 
 %MY_CHOCO_INSTALL_CMD% choco-upgrade-all-at
 
 %MY_CHOCO_INSTALL_CMD% busybox
 busybox --install %SystemRoot%
 
+%MY_CHOCO_INSTALL_CMD% 7zip.install
 %MY_CHOCO_INSTALL_CMD% firefox
 %MY_CHOCO_INSTALL_CMD% git
 %MY_CHOCO_INSTALL_CMD% gpg4win
@@ -31,10 +33,19 @@ busybox --install %SystemRoot%
 REM Required for Windows terminal.
 %MY_CHOCO_INSTALL_CMD% dotnetfx
 
+REM Misc tweaks.
+%MY_CHOCO_INSTALL_CMD% taskbar-never-combine
+%MY_CHOCO_INSTALL_CMD% explorer-show-all-folders
+%MY_CHOCO_INSTALL_CMD% explorer-expand-to-current-folder
+
 REM Multimedia stuff.
 %MY_CHOCO_INSTALL_CMD% spotify
 %MY_CHOCO_INSTALL_CMD% vlc
 %MY_CHOCO_INSTALL_CMD% xnviewmp
+
+REM Pin apps that upgrade themselves.
+%MY_CHOCO_PIN_CMD% firefox
+%MY_CHOCO_PIN_CMD% vscode
 
 REM Disable fast startup (will break dual boot).
 powercfg -h off

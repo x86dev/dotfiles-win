@@ -1,4 +1,8 @@
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+@ECHO OFF
+
+set MY_POWERSHELL_CMD=@powershell -NoProfile -ExecutionPolicy Bypass -Command
+
+%MY_POWERSHELL_CMD% "[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
 choco feature enable -n allowGlobalConfirmation
 
@@ -41,3 +45,19 @@ bcdedit.exe -set TESTSIGNING ON
 
 REM Disable fast startup (will break dual boot).
 powercfg -h off
+
+REM Install WSL.
+choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+%MY_POWERSHELL_CMD% "Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing"
+%MY_POWERSHELL_CMD% "Add-AppxPackage -Path ~/Ubuntu.appx"
+
+REM Ubuntu VM.
+Ubuntu1804 install --root
+Ubuntu1804 run apt update
+Ubuntu1804 run apt upgrade
+
+REM Post stuff.
+%MY_POWERSHELL_CMD% "Enable-UAC"
+%MY_POWERSHELL_CMD% "Enable-MicrosoftUpdate"
+%MY_POWERSHELL_CMD% "Install-WindowsUpdate -acceptEula"

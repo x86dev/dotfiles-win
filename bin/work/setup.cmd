@@ -1,6 +1,5 @@
 set MY_CHOCO_INSTALL_CMD=choco install -v --yes
 
-%MY_CHOCO_INSTALL_CMD% conemu
 %MY_CHOCO_INSTALL_CMD% curl
 %MY_CHOCO_INSTALL_CMD% greenshot
 %MY_CHOCO_INSTALL_CMD% livekd

@@ -14,10 +14,8 @@ set MY_CHOCO_PIN_CMD=choco pin add -n=
 %MY_CHOCO_INSTALL_CMD% busybox
 busybox --install %SystemRoot%
 
-%MY_CHOCO_INSTALL_CMD% 7zip.install
 %MY_CHOCO_INSTALL_CMD% firefox
 %MY_CHOCO_INSTALL_CMD% git
-%MY_CHOCO_INSTALL_CMD% gpg4win
 %MY_CHOCO_INSTALL_CMD% keepass
 %MY_CHOCO_INSTALL_CMD% putty
 %MY_CHOCO_INSTALL_CMD% qownnotes
@@ -30,7 +28,6 @@ busybox --install %SystemRoot%
 %MY_CHOCO_INSTALL_CMD% tortoisegit
 %MY_CHOCO_INSTALL_CMD% vim
 %MY_CHOCO_INSTALL_CMD% vscode
-%MY_CHOCO_INSTALL_CMD% vscode-settingssync
 %MY_CHOCO_INSTALL_CMD% wget
 %MY_CHOCO_INSTALL_CMD% microsoft-windows-terminal
 

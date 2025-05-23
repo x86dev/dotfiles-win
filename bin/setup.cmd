@@ -19,6 +19,7 @@ busybox --install %SystemRoot%
 %MY_CHOCO_INSTALL_CMD% keepass
 %MY_CHOCO_INSTALL_CMD% putty
 %MY_CHOCO_INSTALL_CMD% qownnotes
+%MY_CHOCO_INSTALL_CMD% libreoffice
 %MY_CHOCO_INSTALL_CMD% nextcloud-client
 %MY_CHOCO_INSTALL_CMD% python3
 %MY_CHOCO_INSTALL_CMD% sumatrapdf
